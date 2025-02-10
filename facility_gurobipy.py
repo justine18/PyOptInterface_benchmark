@@ -12,11 +12,11 @@ def solve_facility(G, F):
     m = Model("facility")
 
     # Create variables
-    y = m.addVars(range(1, F + 1), range(1, 3), lb=0.0, ub=1.0)
-    s = m.addVars(range(G + 1), range(G + 1), range(1, F + 1), lb=0.0)
-    z = m.addVars(range(G + 1), range(G + 1), range(1, F + 1), vtype=GRB.BINARY)
-    r = m.addVars(range(G + 1), range(G + 1), range(1, F + 1), range(1, 3))
-    d = m.addVar()
+    y = m.addVars(range(1, F + 1), range(1, 3), lb=0.0, ub=1.0, name='y')
+    s = m.addVars(range(G + 1), range(G + 1), range(1, F + 1), lb=0.0, name='s')
+    z = m.addVars(range(G + 1), range(G + 1), range(1, F + 1), vtype=GRB.BINARY, name='z')
+    r = m.addVars(range(G + 1), range(G + 1), range(1, F + 1), range(1, 3), name='r')
+    d = m.addVar(name='d')
 
     # Set objective
     m.setObjective(d, GRB.MINIMIZE)
@@ -24,30 +24,59 @@ def solve_facility(G, F):
     # Add constraints
     for i in range(G + 1):
         for j in range(G + 1):
-            m.addConstr(z.sum(i, j, "*") == 1)
+            m.addConstr(z.sum(i, j, "*") == 1, name=f'assmt({i},{j})')
 
     M = 2 * 1.414
+    # for i in range(G + 1):
+    #     for j in range(G + 1):
+    #         for f in range(1, F + 1):
+    #             m.addConstr(s[i, j, f] == d + M * (1 - z[i, j, f]), name=f'quadrhs_{i}_{j}_{f}')
+    #             m.addConstr(r[i, j, f, 1] == (1.0 * i) / G - y[f, 1], name=f'quaddistk1_{i}_{j}_{f}')
+    #             m.addConstr(r[i, j, f, 2] == (1.0 * j) / G - y[f, 2], name=f'quaddistk2_{i}_{j}_{f}')
+    #             m.addConstr(
+    #                 r[i, j, f, 1] * r[i, j, f, 1] + r[i, j, f, 2] * r[i, j, f, 2]
+    #                 <= s[i, j, f] * s[i, j, f]
+    #             , name=f'quaddist_{i}_{j}_{f}')
+
     for i in range(G + 1):
         for j in range(G + 1):
             for f in range(1, F + 1):
-                m.addConstr(s[i, j, f] == d + M * (1 - z[i, j, f]))
-                m.addConstr(r[i, j, f, 1] == (1.0 * i) / G - y[f, 1])
-                m.addConstr(r[i, j, f, 2] == (1.0 * j) / G - y[f, 2])
+                m.addConstr(s[i, j, f] == d + M * (1 - z[i, j, f]), name=f'quadrhs({i},{j},{f})')
+    for i in range(G + 1):
+        for j in range(G + 1):
+            for f in range(1, F + 1):
+                m.addConstr(r[i, j, f, 1] == (1.0 * i) / G - y[f, 1], name=f'quaddistk1({i},{j},{f})')
+    for i in range(G + 1):
+        for j in range(G + 1):
+            for f in range(1, F + 1):
+                m.addConstr(r[i, j, f, 2] == (1.0 * j) / G - y[f, 2], name=f'quaddistk2({i},{j},{f})')
+    for i in range(G + 1):
+        for j in range(G + 1):
+            for f in range(1, F + 1):
                 m.addConstr(
                     r[i, j, f, 1] * r[i, j, f, 1] + r[i, j, f, 2] * r[i, j, f, 2]
                     <= s[i, j, f] * s[i, j, f]
-                )
+                , name=f'quaddist({i},{j},{f})')
 
     # Optimize model
-    m.setParam("OutputFlag", 0)
-    m.setParam("TimeLimit", 0.0)
-    m.setParam("Presolve", 0)
+    # m.setParam("OutputFlag", 0)
+    # m.setParam("TimeLimit", 0.0)
+    # m.setParam("Presolve", 0)
+
     m.optimize()
+
+    if m.Status == GRB.INFEASIBLE:
+        m.computeIIS()
+        m.write('iismodel.ilp')
+    m.write('gurobi.mps')
+    m.write('gurobi.lp')
+
+    print(m.objVal)
 
     return m
 
 
-def main(Ns=[25, 50, 75, 100]):
+def main(Ns=[2]):
     dir = os.path.realpath(os.path.dirname(__file__))
     for n in Ns:
         start = time.time()

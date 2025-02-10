@@ -1,0 +1,249 @@
+GAMS 48.6.1  67fbb04b Jan 23, 2025          WEX-WEI x86 64bit/MS Windows - 02/10/25 15:59:40 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+ 137  Model facility / assmt,quadrhs,quaddistk1,quaddistk2,quaddist /;
+ 138  solve facility using MIQCP MIN d;
+ 139   
+
+
+COMPILATION TIME     =        0.000 SECONDS      4 MB  48.6.1 67fbb04b WEX-WEI
+GAMS 48.6.1  67fbb04b Jan 23, 2025          WEX-WEI x86 64bit/MS Windows - 02/10/25 15:59:40 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE facility Using MIQCP From line 138
+
+
+---- assmt  =E=  
+
+assmt(0,0)..  z(0,0,1) + z(0,0,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(0,1)..  z(0,1,1) + z(0,1,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(0,2)..  z(0,2,1) + z(0,2,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(1,0)..  z(1,0,1) + z(1,0,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(1,1)..  z(1,1,1) + z(1,1,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(1,2)..  z(1,2,1) + z(1,2,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(2,0)..  z(2,0,1) + z(2,0,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(2,1)..  z(2,1,1) + z(2,1,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+assmt(2,2)..  z(2,2,1) + z(2,2,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+
+---- quadrhs  =E=  
+
+quadrhs(0,0,1)..  s(0,0,1) + 2.828*z(0,0,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(0,0,2)..  s(0,0,2) + 2.828*z(0,0,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(0,1,1)..  s(0,1,1) + 2.828*z(0,1,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(0,1,2)..  s(0,1,2) + 2.828*z(0,1,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(0,2,1)..  s(0,2,1) + 2.828*z(0,2,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(0,2,2)..  s(0,2,2) + 2.828*z(0,2,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(1,0,1)..  s(1,0,1) + 2.828*z(1,0,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(1,0,2)..  s(1,0,2) + 2.828*z(1,0,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(1,1,1)..  s(1,1,1) + 2.828*z(1,1,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(1,1,2)..  s(1,1,2) + 2.828*z(1,1,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(1,2,1)..  s(1,2,1) + 2.828*z(1,2,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(1,2,2)..  s(1,2,2) + 2.828*z(1,2,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(2,0,1)..  s(2,0,1) + 2.828*z(2,0,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(2,0,2)..  s(2,0,2) + 2.828*z(2,0,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(2,1,1)..  s(2,1,1) + 2.828*z(2,1,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(2,1,2)..  s(2,1,2) + 2.828*z(2,1,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(2,2,1)..  s(2,2,1) + 2.828*z(2,2,1) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+quadrhs(2,2,2)..  s(2,2,2) + 2.828*z(2,2,2) - d =E= 2.828 ; (LHS = 0, INFES = 2.828 ****)
+     
+
+---- quaddistk1  =E=  
+
+quaddistk1(0,0,1)..  y(1,1) + r(0,0,1,1) =E= 0 ; (LHS = 0)
+     
+quaddistk1(0,0,2)..  y(2,1) + r(0,0,2,1) =E= 0 ; (LHS = 0)
+     
+quaddistk1(0,1,1)..  y(1,1) + r(0,1,1,1) =E= 0 ; (LHS = 0)
+     
+quaddistk1(0,1,2)..  y(2,1) + r(0,1,2,1) =E= 0 ; (LHS = 0)
+     
+quaddistk1(0,2,1)..  y(1,1) + r(0,2,1,1) =E= 0 ; (LHS = 0)
+     
+quaddistk1(0,2,2)..  y(2,1) + r(0,2,2,1) =E= 0 ; (LHS = 0)
+     
+quaddistk1(1,0,1)..  y(1,1) + r(1,0,1,1) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk1(1,0,2)..  y(2,1) + r(1,0,2,1) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk1(1,1,1)..  y(1,1) + r(1,1,1,1) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk1(1,1,2)..  y(2,1) + r(1,1,2,1) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk1(1,2,1)..  y(1,1) + r(1,2,1,1) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk1(1,2,2)..  y(2,1) + r(1,2,2,1) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk1(2,0,1)..  y(1,1) + r(2,0,1,1) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk1(2,0,2)..  y(2,1) + r(2,0,2,1) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk1(2,1,1)..  y(1,1) + r(2,1,1,1) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk1(2,1,2)..  y(2,1) + r(2,1,2,1) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk1(2,2,1)..  y(1,1) + r(2,2,1,1) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk1(2,2,2)..  y(2,1) + r(2,2,2,1) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+
+---- quaddistk2  =E=  
+
+quaddistk2(0,0,1)..  y(1,2) + r(0,0,1,2) =E= 0 ; (LHS = 0)
+     
+quaddistk2(0,0,2)..  y(2,2) + r(0,0,2,2) =E= 0 ; (LHS = 0)
+     
+quaddistk2(0,1,1)..  y(1,2) + r(0,1,1,2) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk2(0,1,2)..  y(2,2) + r(0,1,2,2) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk2(0,2,1)..  y(1,2) + r(0,2,1,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk2(0,2,2)..  y(2,2) + r(0,2,2,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk2(1,0,1)..  y(1,2) + r(1,0,1,2) =E= 0 ; (LHS = 0)
+     
+quaddistk2(1,0,2)..  y(2,2) + r(1,0,2,2) =E= 0 ; (LHS = 0)
+     
+quaddistk2(1,1,1)..  y(1,2) + r(1,1,1,2) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk2(1,1,2)..  y(2,2) + r(1,1,2,2) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk2(1,2,1)..  y(1,2) + r(1,2,1,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk2(1,2,2)..  y(2,2) + r(1,2,2,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk2(2,0,1)..  y(1,2) + r(2,0,1,2) =E= 0 ; (LHS = 0)
+     
+quaddistk2(2,0,2)..  y(2,2) + r(2,0,2,2) =E= 0 ; (LHS = 0)
+     
+quaddistk2(2,1,1)..  y(1,2) + r(2,1,1,2) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk2(2,1,2)..  y(2,2) + r(2,1,2,2) =E= 0.5 ; (LHS = 0, INFES = 0.5 ****)
+     
+quaddistk2(2,2,1)..  y(1,2) + r(2,2,1,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+quaddistk2(2,2,2)..  y(2,2) + r(2,2,2,2) =E= 1 ; (LHS = 0, INFES = 1 ****)
+     
+
+---- quaddist  =L=  
+
+quaddist(0,0,1)..  (0)*s(0,0,1) + (0)*r(0,0,1,1) + (0)*r(0,0,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(0,0,2)..  (0)*s(0,0,2) + (0)*r(0,0,2,1) + (0)*r(0,0,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(0,1,1)..  (0)*s(0,1,1) + (0)*r(0,1,1,1) + (0)*r(0,1,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(0,1,2)..  (0)*s(0,1,2) + (0)*r(0,1,2,1) + (0)*r(0,1,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(0,2,1)..  (0)*s(0,2,1) + (0)*r(0,2,1,1) + (0)*r(0,2,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(0,2,2)..  (0)*s(0,2,2) + (0)*r(0,2,2,1) + (0)*r(0,2,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(1,0,1)..  (0)*s(1,0,1) + (0)*r(1,0,1,1) + (0)*r(1,0,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(1,0,2)..  (0)*s(1,0,2) + (0)*r(1,0,2,1) + (0)*r(1,0,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(1,1,1)..  (0)*s(1,1,1) + (0)*r(1,1,1,1) + (0)*r(1,1,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(1,1,2)..  (0)*s(1,1,2) + (0)*r(1,1,2,1) + (0)*r(1,1,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(1,2,1)..  (0)*s(1,2,1) + (0)*r(1,2,1,1) + (0)*r(1,2,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(1,2,2)..  (0)*s(1,2,2) + (0)*r(1,2,2,1) + (0)*r(1,2,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(2,0,1)..  (0)*s(2,0,1) + (0)*r(2,0,1,1) + (0)*r(2,0,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(2,0,2)..  (0)*s(2,0,2) + (0)*r(2,0,2,1) + (0)*r(2,0,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(2,1,1)..  (0)*s(2,1,1) + (0)*r(2,1,1,1) + (0)*r(2,1,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(2,1,2)..  (0)*s(2,1,2) + (0)*r(2,1,2,1) + (0)*r(2,1,2,2) =L= 0 ; (LHS = 0)
+     
+quaddist(2,2,1)..  (0)*s(2,2,1) + (0)*r(2,2,1,1) + (0)*r(2,2,1,2) =L= 0 ; (LHS = 0)
+     
+quaddist(2,2,2)..  (0)*s(2,2,2) + (0)*r(2,2,2,1) + (0)*r(2,2,2,2) =L= 0 ; (LHS = 0)
+     
+GAMS 48.6.1  67fbb04b Jan 23, 2025          WEX-WEI x86 64bit/MS Windows - 02/10/25 15:59:40 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE facility Using MIQCP From line 138
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           5     SINGLE EQUATIONS           81
+BLOCKS OF VARIABLES           5     SINGLE VARIABLES           77
+NON ZERO ELEMENTS           198     NON LINEAR N-Z             54
+CODE LENGTH                 181     CONSTANT POOL              16     DISCRETE VARIABLES         18
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  48.6.1 67fbb04b WEX-WEI
+GAMS 48.6.1  67fbb04b Jan 23, 2025          WEX-WEI x86 64bit/MS Windows - 02/10/25 15:59:40 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE facility Using MIQCP From line 138
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   facility            OBJECTIVE  d
+     TYPE    MIQCP               DIRECTION  MINIMIZE
+     SOLVER  COPT                FROM LINE  138
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                0.5590
+
+ RESOURCE USAGE, LIMIT          0.183 10000000000.000
+ ITERATION COUNT, LIMIT      1686    2147483647
+ EVALUATION ERRORS             NA             0
+Reading parameter(s) from "C:\Users\jbroi\AppData\Local\Temp\tmp3yfssd2x\copt.opt"
+>>  writemps gamspy.mps
+Finished reading from "C:\Users\jbroi\AppData\Local\Temp\tmp3yfssd2x\copt.opt"
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS 48.6.1  67fbb04b Jan 23, 2025          WEX-WEI x86 64bit/MS Windows - 02/10/25 15:59:40 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+EXECUTION TIME       =        0.265 SECONDS      4 MB  48.6.1 67fbb04b WEX-WEI
+
+
+USER: GAMSPy++ Working License for Justine Broihan   S241007|0002CN-GEN
+      GAMS Software GmbH, Braunschweig Office                   DCE3791
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\jbroi\AppData\Local\Temp\tmp3yfssd2x\_68118760-bd10-4687-acad-3636fe01c19b.gms
+Output     C:\Users\jbroi\Documents\Repositories\PyOptInterface_benchmark-1\gamspy.lst
